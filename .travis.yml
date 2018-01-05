@@ -12,9 +12,9 @@ compiler:
   #- clang
   - gcc-6
 
-env: WHICHGCC=6 USE_CPP=11
+#env: WHICHGCC=6 USE_CPP=11
   #- CC=gcc-6
-  - CXX=g++-6
+  #- CXX=g++-6
 
 install:
   #- sudo apt-get install -qq g++-5
