@@ -1,13 +1,24 @@
 language: cpp
 sudo: false
 
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-6
+
 compiler:
   #- clang
-  - gcc
+  - gcc-6
+
+env:
+  - CC=gcc-6
+  - CXX=g++-6
 
 install:
-  - sudo apt-get install -qq g++-5
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5;
+  #- sudo apt-get install -qq g++-5
+  #- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5;
 
   - wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
   - tar xzf boost_1_64_0.tar.gz
