@@ -1,1 +1,43 @@
 language: cpp
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-6
+
+compiler:
+  #- clang
+  - gcc-6
+
+env: WHICHGCC=6 USE_CPP=11
+  - CC=gcc-6
+  - CXX=g++-6
+
+install:
+  #- sudo apt-get install -qq g++-5
+  #- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5;
+
+  - wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - tar xzf boost_1_64_0.tar.gz
+  - cd boost_1_64_0/
+  - ./bootstrap.sh --prefix=/usr/local --with-libraries=date_time,regex,test
+  - (./b2 -j2 link=shared threading=multi variant=release) > /dev/null
+  - (sudo ./b2 install ) > /dev/null
+  - cd ..
+
+before_script:
+  - mkdir build
+  - cd build
+  - cmake -D CMAKE_CXX_COMPILER=g++-6 ..
+
+script:
+  - make
+
+notifications:
+  email: false
+
+after_success:
+  - codecov

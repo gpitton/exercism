@@ -1,6 +1,5 @@
 #if !defined(HAMMING_H)
 #define HAMMING_H
-#define EXERCISM_RUN_ALL_TESTS
 #include <stdexcept>
 #include <string>
 
