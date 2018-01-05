@@ -12,8 +12,8 @@ compiler:
   #- clang
   - gcc-6
 
-env:
-  - CC=gcc-6
+env: WHICHGCC=6 USE_CPP=11
+  #- CC=gcc-6
   - CXX=g++-6
 
 install:
