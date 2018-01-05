@@ -16,6 +16,16 @@ compiler:
   #- CC=gcc-6
   #- CXX=g++-6
 
+matrix:
+  fast_finish: true
+    exclude:
+      - os: linux
+        compiler: gcc
+    include:
+      - os: linux
+        compiler: gcc
+        env: WHICHGCC=6 USE_CPP=11
+
 install:
   #- sudo apt-get install -qq g++-5
   #- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5;
