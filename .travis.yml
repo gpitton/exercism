@@ -10,7 +10,7 @@ install:
   - sudo tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
   - sudo ./bootstrap.sh --prefix=/usr/local --with-libraries=date_time,regex,test
-  - sudo ./b2 -j2 link=shared threading=multi variant=release > output.txt
+  - sudo ./b2 -j2 link=shared threading=multi variant=release
   - sudo ./b2 install 
   #- sudo apt-get install libboost1.60-all-dev
 
