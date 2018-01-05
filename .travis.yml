@@ -1,5 +1,7 @@
 language: cpp
 before_script:
+  - sudo add-apt-repository ppa:apokluda/boost1.62 --yes
+  - sudo apt-get update
   - mkdir build
   - cd build
   - cmake ..
