@@ -1,8 +1,7 @@
 language: cpp
 before_script:
   - sudo apt-cache search libboost
-  - sudo add-apt-repository ppa:apokluda/boost1.62 --yes
-  - sudo apt-get update
+  - sudo apt-get install libboost-dev
   - mkdir build
   - cd build
   - cmake ..
