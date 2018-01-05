@@ -18,7 +18,7 @@ install:
 before_script:
   - sudo mkdir build
   - cd build
-  - cmake ..
+  - sudo  cmake ..
 
 script:
   - make
