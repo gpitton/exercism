@@ -17,6 +17,8 @@ env: WHICHGCC=7 USE_CPP=17
   - CXX=g++-7
 
 install:
+  # required by coverall:
+  - sudo apt-get --assume-yes install lcov curl
   - wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
   - tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
@@ -28,7 +30,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -D CMAKE_CXX_COMPILER=g++-7 ..
+  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON ..
 
 script:
   - make
