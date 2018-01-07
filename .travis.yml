@@ -28,7 +28,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -D CMAKE_CXX_COMPILER=g++-6 ..
+  - cmake -D CMAKE_CXX_COMPILER=g++-7 ..
 
 script:
   - make
