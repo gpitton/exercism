@@ -15,6 +15,10 @@ compiler:
 env: WHICHGCC=7 USE_CPP=17
   - CC=gcc-7
   - CXX=g++-7
+  - CODACY_PROJECT_TOKEN=5864916546a94520b05af1b70cdbaebd
+
+before_install:
+  - pip install --user cpp-coveralls
 
 install:
   # required by coverall:
@@ -30,7 +34,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON ..
+  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON ..
 
 script:
   - make
