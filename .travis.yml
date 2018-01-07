@@ -6,20 +6,17 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - g++-6
+    - g++-7
 
 compiler:
   #- clang
-  - gcc-6
+  - gcc-7
 
-env: WHICHGCC=6 USE_CPP=11
-  - CC=gcc-6
-  - CXX=g++-6
+env: WHICHGCC=7 USE_CPP=17
+  - CC=gcc-7
+  - CXX=g++-7
 
 install:
-  #- sudo apt-get install -qq g++-5
-  #- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5;
-
   - wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
   - tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
@@ -39,5 +36,3 @@ script:
 notifications:
   email: false
 
-after_success:
-  - codecov
