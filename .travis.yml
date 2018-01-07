@@ -33,6 +33,9 @@ before_script:
 script:
   - make
 
+after_success:
+  - coveralls
+
 notifications:
   email: false
 
