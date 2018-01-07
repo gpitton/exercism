@@ -16,6 +16,9 @@ env: WHICHGCC=7 USE_CPP=17
   - CC=gcc-7
   - CXX=g++-7
 
+before_install:
+  - pip install --user cpp-coveralls
+
 install:
   # required by coverall:
   - sudo apt-get --assume-yes install lcov curl
