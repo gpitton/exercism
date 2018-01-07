@@ -34,7 +34,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON ..
+  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON ..
 
 script:
   - make
