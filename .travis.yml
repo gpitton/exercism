@@ -15,6 +15,7 @@ compiler:
 env: WHICHGCC=7 USE_CPP=17
   - CC=gcc-7
   - CXX=g++-7
+  - CODACY_PROJECT_TOKEN=5864916546a94520b05af1b70cdbaebd
 
 before_install:
   - pip install --user cpp-coveralls
