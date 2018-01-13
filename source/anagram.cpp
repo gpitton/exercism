@@ -9,9 +9,9 @@ namespace anagram
 
 
   anagram::anagram(std::string name)
-    {
-      original_name = name;
-    }
+  :
+  original_name {name}
+  {}
 
 
   std::vector<std::string> anagram::matches (const std::vector<std::string>& names)

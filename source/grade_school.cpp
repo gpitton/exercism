@@ -12,7 +12,7 @@ std::map<int,std::vector<std::string>> school::roster()
 }
 
 
-void school::add(const std::string name,int n_grade)
+void school::add(const std::string& name,int n_grade)
 {
     school_roster[n_grade].push_back(name);
 }

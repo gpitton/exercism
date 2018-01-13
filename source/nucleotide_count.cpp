@@ -7,9 +7,10 @@ namespace dna
 
 
 counter::counter (std::string init_string)
+:
+nucleotides_string {"ATCG"},
+reference_string {init_string}
 {
-    nucleotides_string = "ATCG";
-    reference_string = init_string;
     classify_nucleotides ();
 }
 

@@ -69,10 +69,10 @@ namespace word_count
   std::string remove_multiple_spaces(const std::string& phrase)
   {
       std::string few_spaces;
-      char        it,pt;
+      char        pt;
       for (int i=0;i<phrase.length();++i)
       {
-          it = phrase[i];
+          char it = phrase[i];
           if (i>0)
               pt = phrase[i-1];
           if (!(it == ' ' && pt == ' '))
