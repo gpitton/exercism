@@ -8,7 +8,7 @@ namespace anagram
 {
 
 
-  anagram::anagram(std::string name)
+  anagram::anagram(const std::string& name)
   :
   original_name {name}
   {}
