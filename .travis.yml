@@ -20,7 +20,7 @@ env: WHICHGCC=7 USE_CPP=17
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -q
-  - sudo apt-get install gcc-7
+  - sudo apt-get install gcc-7 g++-7
   - pip install --user cpp-coveralls
 
 install:
