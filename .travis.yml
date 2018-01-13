@@ -16,6 +16,7 @@ env: WHICHGCC=7 USE_CPP=17
   - CC=gcc-7
   - CXX=g++-7
   - CODACY_PROJECT_TOKEN=5864916546a94520b05af1b70cdbaebd
+  - COVERALLS_TOKEN=xMDW3M21AJDVeB3pVhIL6Sh28hQQ07Top
 
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
