@@ -16,12 +16,15 @@ env: WHICHGCC=7 USE_CPP=17
   - CC=gcc-7
   - CXX=g++-7
   - CODACY_PROJECT_TOKEN=5864916546a94520b05af1b70cdbaebd
+  - COVERALLS_TOKEN=xMDW3M21AJDVeB3pVhIL6Sh28hQQ07Top
 
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -q
-  - sudo apt-get install gcc-7 g++-7
+  - sudo apt-get install g++-7
   - pip install --user cpp-coveralls
+  - sudo apt-get install lcov
+  - gem install coveralls-lcov
 
 install:
   # required by coverall:
@@ -37,14 +40,19 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -DCMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON -DENABLE_TESTING=ON ..
+  - lcov --directory . --zerocounters
+  - cmake -DCMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 ..
 
 script:
-  - make
+  - make -j2
   - ctest
 
 after_success:
-  - coveralls --root . --gcov-options '\-lp'
+  - lcov --directory . --capture --output-file coverage.info
+  - lcov --remove coverage.info 'tests/*' '/usr/*' --output-file coverage.info
+  - lcov --list coverage.info
+  - coveralls-lcov --repo-token ${COVERALLS_TOKEN} coverage.info
+  #- coveralls --root . --gcov-options '\-lp'
 
 notifications:
   email: false
