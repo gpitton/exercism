@@ -37,14 +37,14 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -D CMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON -DENABLE_TESTING=ON ..
+  - cmake -DCMAKE_CXX_COMPILER=g++-7 -DCOVERAGE=1 -DCOVERALLS=ON -DCOVERALLS_UPLOAD=ON -DENABLE_TESTING=ON ..
 
 script:
   - make
   - ctest
 
 after_success:
-  - coveralls
+  - coveralls --root .
 
 notifications:
   email: false
