@@ -18,7 +18,7 @@ env: WHICHGCC=7 USE_CPP=17
   - CODACY_PROJECT_TOKEN=5864916546a94520b05af1b70cdbaebd
 
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r-/test -y
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -q
   - sudo apt-get install gcc-7
   - pip install --user cpp-coveralls
