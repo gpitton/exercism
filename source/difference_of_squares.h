@@ -4,9 +4,9 @@
 
 namespace squares
 {
-    int square_of_sums(const int);
-    int sum_of_squares(const int);
-    int difference(const int);
+int square_of_sums(const int);
+int sum_of_squares(const int);
+int difference(const int);
 }
 
 #endif
