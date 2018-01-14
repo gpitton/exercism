@@ -8,27 +8,27 @@ namespace anagram
 {
 
 
-  anagram::anagram(const std::string& name)
-  :
-  original_name {name}
-  {}
+anagram::anagram(const std::string& name)
+    :
+    original_name {name}
+{}
 
 
-  std::vector<std::string> anagram::matches (const std::vector<std::string>& names)
-  {
+std::vector<std::string> anagram::matches (const std::vector<std::string>& names)
+{
     std::vector<std::string> are_anagrams;
     //for (auto it = names.begin(); it != names.end(); ++it)
     for (auto it : names)
     {
-      if (anagram::is_anagram(it))
-          are_anagrams.push_back(it);
+        if (anagram::is_anagram(it))
+            are_anagrams.push_back(it);
     }
     return are_anagrams;
-  }
+}
 
 
-  bool anagram::is_anagram (const std::string& src) const
-  {
+bool anagram::is_anagram (const std::string& src) const
+{
     std::string copied_src = boost::algorithm::to_lower_copy(src),
                 copied_name = boost::algorithm::to_lower_copy(original_name);
     if (copied_src == copied_name)
@@ -40,7 +40,7 @@ namespace anagram
         return true;
     else
         return false;
-  }
+}
 
-  
+
 }

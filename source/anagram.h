@@ -7,17 +7,17 @@
 namespace anagram
 {
 
-  class anagram
-  {
-      public:
-          anagram (const std::string&);
-          std::vector<std::string> matches (const std::vector<std::string>&);
-      private:
-          std::string original_name;
-          bool is_anagram(const std::string&) const;
-  };
+class anagram
+{
+public:
+    anagram (const std::string&);
+    std::vector<std::string> matches (const std::vector<std::string>&);
+private:
+    std::string original_name;
+    bool is_anagram(const std::string&) const;
+};
 
-  
+
 }
 
 #endif

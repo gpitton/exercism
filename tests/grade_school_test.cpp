@@ -79,10 +79,10 @@ BOOST_AUTO_TEST_CASE(the_student_names_in_each_grade_in_the_roster_are_sorted)
     const auto actual = school_.roster();
 
     const map<int, vector<string>> expected{
-            {3, {"Kyle"}},
-            {4, {"Christopher", "Jennifer"}},
-            {6, {"Kareem"}}
-        };
+        {3, {"Kyle"}},
+        {4, {"Christopher", "Jennifer"}},
+        {6, {"Kareem"}}
+    };
     BOOST_TEST(expected == actual);
 }
 

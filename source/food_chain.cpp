@@ -12,14 +12,14 @@ std::string verse(int recursion_level)
     std::vector<std::string> adjective {"It wriggled and jiggled and tickled inside her.", "How absurd to swallow a bird!", "Imagine that, to swallow a cat!", "What a hog, to swallow a dog!", "Just opened her throat and swallowed a goat!", "I don't know how she swallowed a cow!", "She's dead, of course!"};
     std::string closure {"I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n"};
     std::string song {"I know an old lady who swallowed a "};
-    
+
     song += animal[recursion_level-1] + ".\n";
     if (recursion_level>1)
         song += adjective[recursion_level-2] + "\n";
     if (recursion_level>7)
         return song;
 
-    for (int i=recursion_level-1;i>0;--i)
+    for (int i=recursion_level-1; i>0; --i)
     {
         song += "She swallowed the " + animal[i] + " to catch the " + animal[i-1];
         if (animal[i-1] == "spider")

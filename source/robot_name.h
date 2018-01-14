@@ -11,11 +11,11 @@ namespace robot_name
 
 class robot
 {
-    public:
+public:
     robot();
     std::string name() const;
     void reset();
-    private:
+private:
     std::random_device rd;
     std::default_random_engine generator;
     //std::mt19937 generator;  // Mersenne Twister

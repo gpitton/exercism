@@ -7,13 +7,13 @@ using namespace boost::posix_time;
 namespace gigasecond
 {
 
-  ptime advance(ptime);
+ptime advance(ptime);
 
-  ptime advance(ptime start_time)
-  {
+ptime advance(ptime start_time)
+{
     ptime Gs = start_time + seconds(1e9);
     return Gs;
-  }
+}
 
 }
 

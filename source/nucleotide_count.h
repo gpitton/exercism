@@ -9,16 +9,16 @@ namespace dna
 
 class counter
 {
-    public:
-        counter (const std::string&);
-        std::map<char,int> nucleotide_counts () const;
-        int count (const char) const;
+public:
+    counter (const std::string&);
+    std::map<char,int> nucleotide_counts () const;
+    int count (const char) const;
 
-    private:
-        std::string nucleotides_string;
-        std::string reference_string;
-        std::map<char,int> nucleotides;
-        void classify_nucleotides ();
+private:
+    std::string nucleotides_string;
+    std::string reference_string;
+    std::map<char,int> nucleotides;
+    void classify_nucleotides ();
 };
 
 }

@@ -83,8 +83,8 @@ BOOST_AUTO_TEST_CASE(prolonged_silence)
     BOOST_REQUIRE_EQUAL("Fine. Be that way!", bob::hey("   "));
 }
 
-BOOST_AUTO_TEST_CASE(not_all_silence)                                                                         
-{                                                                                                             
-	BOOST_REQUIRE_EQUAL("Whatever.", bob::hey(" A bit of silence can be nice.  "));                           
+BOOST_AUTO_TEST_CASE(not_all_silence)
+{
+    BOOST_REQUIRE_EQUAL("Whatever.", bob::hey(" A bit of silence can be nice.  "));
 }
 #endif
