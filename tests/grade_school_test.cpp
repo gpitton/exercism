@@ -92,7 +92,4 @@ BOOST_AUTO_TEST_CASE(checking_a_grade_should_not_change_the_roster)
     BOOST_REQUIRE(school_.roster().empty());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-#endif
-
 BOOST_AUTO_TEST_SUITE_END();
