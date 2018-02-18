@@ -4,7 +4,9 @@
 #include <cstdint>
 
 
+
 namespace grains {
+
 
 uint_fast64_t square(const unsigned int& n)
 {
@@ -13,6 +15,7 @@ uint_fast64_t square(const unsigned int& n)
     else
         return std::pow(2, n - 1);
 }
+
 
 
 uint_fast64_t total(const unsigned int& n)
