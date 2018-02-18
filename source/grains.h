@@ -1,11 +1,14 @@
 #if !defined(GRAINS_H)
 #define GRAINS_H
 #include <cmath>
+#include <cstdint>
+
 
 
 namespace grains {
 
-unsigned long long square(const unsigned int& n)
+
+uint_fast64_t square(const unsigned int& n)
 {
     if (n == 1)
         return 1;
@@ -14,21 +17,22 @@ unsigned long long square(const unsigned int& n)
 }
 
 
-unsigned long long total(const unsigned int& n)
+
+uint_fast64_t total(const unsigned int& n)
 {
    if (n == 1)
        return 1;
    else
-       return static_cast<unsigned long long>(std::pow(2, n - 1)) + total(n - 1);
+       return static_cast<uint_fast64_t>(std::pow(2, n - 1)) + total(n - 1);
 }
 
 
-unsigned long long total()
+uint_fast64_t total()
 {
     return total(64);
-    //unsigned long long sum = 0;
+    //uint_fast64_t sum = 0;
     //for (auto i = 64; i >= 1; --i)
-    //        sum += static_cast<unsigned long long>(std::pow(2, i-1));
+    //        sum += static_cast<uint_fast64_t>(std::pow(2, i-1));
     //return sum;
 }
 
